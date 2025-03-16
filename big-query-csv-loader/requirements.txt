@@ -1,0 +1,4 @@
+google-cloud-bigquery
+google-cloud-storage
+smart-open
+pydantic-settings

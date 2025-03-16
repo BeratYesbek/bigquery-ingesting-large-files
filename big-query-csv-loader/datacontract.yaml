@@ -1,0 +1,42 @@
+dataContractSpecification: 1.1.0
+id: beratyesbek-datacontract
+info:
+  title: Berat Data Contract
+  description: A data contract defining the structure and constraints for user data stored in a CSV file.
+  version: 0.0.1
+servers:
+  production:
+    type: bigquery
+    project: beratyesbek-test
+    dataset: users_dataset
+    table: users
+models:
+  users:
+    description: A table representing user information stored in a CSV file with ASCII encoding.
+    type: table
+    title: Users
+    fields:
+      username:
+        type: string
+        description: The unique username of the user.
+        required: true
+      firstname:
+        type: string
+        description: The user's first name.
+        required: true
+      lastname:
+        type: string
+        description: The user's last name.
+        required: true
+      language:
+        type: string
+        description: The preferred language of the user (e.g., 'en', 'es', 'fr').
+        required: false
+      address_id:
+        type: integer
+        description: A foreign key referencing the unique identifier of the user's address in an external addresses table.
+        required: false
+      contact_id:
+        type: integer
+        description: A foreign key referencing the unique identifier of the user's contact details in an external contacts table.
+        required: false
